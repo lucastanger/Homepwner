@@ -15,4 +15,11 @@ class ItemCell: UITableViewCell {
     @IBOutlet var serialNumberLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        nameLabel.adjustsFontSizeToFitWidth = true
+        serialNumberLabel.adjustsFontSizeToFitWidth = true
+        valueLabel.adjustsFontSizeToFitWidth = true
+    }
 }
