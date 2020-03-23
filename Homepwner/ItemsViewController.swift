@@ -14,12 +14,21 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     @IBAction func addNewItem(_ sender: UIButton) {
-        // Make a new index path for the 0th section, last row
-        let lastRow = tableView.numberOfRows(inSection: 0)
-        let indexPath = IndexPath(row: lastRow, section: 0)
+//        // Make a new index path for the 0th section, last row
+//        let lastRow = tableView.numberOfRows(inSection: 0)
+//        let indexPath = IndexPath(row: lastRow, section: 0)
+//
+//        // Insert this new row into the table
+//        tableView.insertRows(at: [indexPath], with: .automatic)
         
-        // Insert this new row into the table
-        tableView.insertRows(at: [indexPath], with: .automatic)
+        let newItem = itemStore.createItem()
+        
+        if let index = itemStore.allItems.firstIndex(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
     }
     
     @IBAction func toggleEditingMode(_ sender: UIButton) {
