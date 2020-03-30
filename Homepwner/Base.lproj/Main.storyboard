@@ -129,6 +129,7 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
+                                        <gestureRecognizers/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GY9-Pn-OC2">
                                         <rect key="frame" x="0.0" y="42" width="398" height="34"/>
@@ -141,6 +142,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTq-9E-s7j">
                                                 <rect key="frame" x="51" y="0.0" width="347" height="34"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -175,6 +177,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Khh-f0-qE3" firstAttribute="leading" secondItem="kxp-hn-XeB" secondAttribute="leading" id="id7-DP-PsX"/>
                                     <constraint firstItem="Nhj-Cs-cLK" firstAttribute="leading" secondItem="Khh-f0-qE3" secondAttribute="leading" id="y7p-Bx-u0c"/>
@@ -182,6 +185,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="R4C-9p-LW7" firstAttribute="trailing" secondItem="JYN-wo-Dmd" secondAttribute="trailing" constant="8" id="7To-01-g1L"/>
                             <constraint firstItem="JYN-wo-Dmd" firstAttribute="top" secondItem="R4C-9p-LW7" secondAttribute="top" constant="8" id="AzC-hk-0cr"/>
@@ -189,6 +193,9 @@
                             <constraint firstItem="JYN-wo-Dmd" firstAttribute="leading" secondItem="R4C-9p-LW7" secondAttribute="leading" constant="8" id="oyj-QQ-80o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R4C-9p-LW7"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wiU-qh-Jhv" appends="YES" id="x1Q-qb-eQ1"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="z8D-MI-HBb"/>
                     <connections>
@@ -199,6 +206,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfG-O3-yUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wiU-qh-Jhv">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="ehh-HG-VKt" id="6oa-R7-TLJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1788.4057971014495" y="113.83928571428571"/>
         </scene>
