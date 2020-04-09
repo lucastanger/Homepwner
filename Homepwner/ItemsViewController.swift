@@ -14,12 +14,6 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
-//        // Make a new index path for the 0th section, last row
-//        let lastRow = tableView.numberOfRows(inSection: 0)
-//        let indexPath = IndexPath(row: lastRow, section: 0)
-//
-//        // Insert this new row into the table
-//        tableView.insertRows(at: [indexPath], with: .automatic)
         
         let newItem = itemStore.createItem()
         
@@ -121,5 +115,11 @@ class ItemsViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 }
