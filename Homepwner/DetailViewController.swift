@@ -62,6 +62,16 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UINavigation
         return true
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        
+        imageView.image = image
+        
+        imageStore.setImage(image, forKey: item.itemKey)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -91,16 +101,6 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UINavigation
         } else {
             item.valueInDollars = 0
         }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.originalImage] as! UIImage
-        
-        imageView.image = image
-        
-        imageStore.setImage(image, forKey: item.itemKey)
-        
-        dismiss(animated: true, completion: nil)
     }
     
 }
