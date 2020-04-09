@@ -94,7 +94,13 @@
                             <outlet property="delegate" destination="DQR-Ef-83a" id="jir-E5-PkY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Homepwner" id="cvM-me-p3j"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="cvM-me-p3j">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tXG-UP-246">
+                            <connections>
+                                <action selector="addNewItem:" destination="DQR-Ef-83a" id="Bln-sd-erL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3s-Id-t7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
