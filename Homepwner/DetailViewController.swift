@@ -40,6 +40,8 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UINavigation
         }
     }
     
+    var imageStore: ImageStore!
+    
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -67,6 +69,12 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UINavigation
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        
+        let key = item.itemKey
+        
+        let imageToDisplay = imageStore.image(forKey: key)
+        imageView.image = imageToDisplay
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,6 +97,8 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UINavigation
         let image = info[.originalImage] as! UIImage
         
         imageView.image = image
+        
+        imageStore.setImage(image, forKey: item.itemKey)
         
         dismiss(animated: true, completion: nil)
     }
